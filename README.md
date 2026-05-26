@@ -21,3 +21,4 @@ python -m http.server 8000
 
 - MediaPipe 的 Landmark 索引與瀏覽器取到的值可能因版本而異；本範例使用簡易啟發式判斷，若要提升準確度可依需求調校閾值或使用機器學習模型做分類。
 - 若手機上無法自動開啟相機，請確認使用 HTTPS 或在本機（localhost）測試。
+test
