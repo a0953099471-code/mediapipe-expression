@@ -1,0 +1,22 @@
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin: 0; background: #e8f4ff; color: #111; }
+.app { max-width: 1080px; margin: 24px auto; padding: 20px; }
+header h1 { margin: 0 0 8px 0; font-size: 1.6rem; }
+header p { margin: 0 0 14px 0; color: #444; }
+.video-wrap { position: relative; width: 100%; max-width: 920px; background: #000; margin: 0 auto; border-radius: 14px; overflow: hidden; box-shadow: 0 16px 40px rgba(22, 70, 120, 0.12); }
+video#input_video { width: 100%; height: auto; display: block; transform: scaleX(-1); }
+canvas#output_canvas { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; transform: scaleX(-1); }
+.controls { margin-top: 12px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+button { padding: 8px 12px; border-radius: 6px; border: 1px solid #ddd; background: #fff; cursor: pointer; }
+.voice-toggle { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 6px; border: 1px solid #ddd; background: #fff; color: #333; cursor: pointer; }
+.voice-toggle input { width: 16px; height: 16px; }
+#status, #emotion { padding: 8px 12px; background: #fff; border: 1px solid #eee; border-radius: 6px; }
+.metrics { margin-top: 18px; padding: 16px; background: rgba(255,255,255,0.92); border: 1px solid #dee7f2; border-radius: 12px; }
+.metrics h2 { margin: 0 0 12px 0; font-size: 1rem; color: #26486a; }
+.metric-row { display: grid; grid-template-columns: 110px 1fr 60px; gap: 12px; align-items: center; margin-bottom: 10px; }
+.metric-row span { font-size: 0.95rem; color: #33475b; }
+.metric-bar { height: 12px; border-radius: 999px; background: #e2efff; overflow: hidden; position: relative; }
+.metric-bar div { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #4b89ff, #62c0ff); width: 0%; transition: width 0.18s ease; }
+footer { margin-top: 18px; color: #666; }
+
+@media (max-width:600px){ .app{padding:10px;} header h1{font-size:1.1rem;} }

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MediaPipe 表情辨識</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="純前端 MediaPipe 臉部 Landmark 即時表情辨識與語音回饋" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>MediaPipe 表情辨識</h1>
+      <p>允許攝影機權限後，系統會即時分析你的表情並語音回饋。</p>
+    </header>
+
+    <main>
+      <div class="video-wrap">
+        <video id="input_video" playsinline></video>
+        <canvas id="output_canvas"></canvas>
+      </div>
+
+      <div class="controls">
+        <button id="toggleBtn">啟動偵測</button>
+        <label class="voice-toggle">
+          <input id="voiceToggle" type="checkbox" checked />
+          啟用語音提示
+        </label>
+        <div id="status">狀態：未啟動</div>
+        <div id="emotion">偵測表情：-</div>
+      </div>
+
+      <div class="metrics">
+        <h2>特徵視覺化</h2>
+        <div class="metric-row">
+          <span>嘴巴張開</span>
+          <div class="metric-bar"><div id="mouthOpenBar"></div></div>
+          <span id="mouthOpenValue">0.00</span>
+        </div>
+        <div class="metric-row">
+          <span>嘴巴寬度</span>
+          <div class="metric-bar"><div id="mouthWidthBar"></div></div>
+          <span id="mouthWidthValue">0.00</span>
+        </div>
+        <div class="metric-row">
+          <span>眼睛開度</span>
+          <div class="metric-bar"><div id="eyeOpenBar"></div></div>
+          <span id="eyeOpenValue">0.00</span>
+        </div>
+        <div class="metric-row">
+          <span>眉毛高度</span>
+          <div class="metric-bar"><div id="browRaiseBar"></div></div>
+          <span id="browRaiseValue">0.00</span>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <small>純前端 • MediaPipe 臉部 Landmark • Web Speech API</small>
+    </footer>
+  </div>
+
+  <!-- MediaPipe scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
